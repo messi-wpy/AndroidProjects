@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
     private String str1 = "0", str2 = "0";
     private double result = 0;
     List<Numbers> mNumbers = new ArrayList<>();
-    List<Numbers>mNumbers1=new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
