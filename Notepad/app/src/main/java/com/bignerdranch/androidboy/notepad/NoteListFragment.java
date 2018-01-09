@@ -97,6 +97,10 @@ public class NoteListFragment extends Fragment {
         public int getItemCount() {
             return mNotes.size();
         }
+
+        public void setNotes(List<Note> notes){
+           mNotes=notes;
+        }
     }
 
     public void updateUI(){
@@ -108,6 +112,7 @@ public class NoteListFragment extends Fragment {
         mRecyclerView.setAdapter(mAdapter);
     }
     else {
+            mAdapter.setNotes(notes);
             mAdapter.notifyDataSetChanged();
         }
     }

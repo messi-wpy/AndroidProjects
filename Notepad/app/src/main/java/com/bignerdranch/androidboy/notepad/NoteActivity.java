@@ -19,14 +19,14 @@ public class NoteActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.note_main);
 
         FragmentManager fm=getSupportFragmentManager();
-        Fragment fragment=fm.findFragmentById(R.id.fragment_container);
+        Fragment fragment=fm.findFragmentById(R.id.note_main);
 
         if(fragment==null){
             fragment=new NoteFragment();
-            fm.beginTransaction().add(R.id.fragment_container,fragment)
+            fm.beginTransaction().add(R.id.note_main,fragment)
                     .commit();
 
         }

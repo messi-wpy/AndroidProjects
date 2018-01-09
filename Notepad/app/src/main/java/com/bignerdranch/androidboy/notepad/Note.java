@@ -22,9 +22,12 @@ public class Note {
     }
 
     public Note(){
-        mDate=new Date();
-        mId=UUID.randomUUID();
+      this(UUID.randomUUID());
 
+    }
+    public Note (UUID id){
+        mId=id;
+        mDate=new Date();
     }
 
     public String getContent() {

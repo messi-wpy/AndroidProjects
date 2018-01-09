@@ -2,6 +2,7 @@ package com.bignerdranch.androidboy.notepad;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
@@ -34,17 +35,59 @@ public class NoteLab {
         mDatabase.insert("notebase",null,values);
     }
     public List<Note>getNotes(){
-        return null;
+        List<Note>notes=new ArrayList<>();
+        NoteCursorWrapper cursor=queryNotes(null,null);
+
+        try{
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()){
+                notes.add(cursor.getNote());
+                cursor.moveToNext();
+            }
+        }finally {
+            cursor.close();
+        }
+        return notes;
+
     }
     public Note getNote(UUID Id){
-        return null;
+        NoteCursorWrapper cursorWrapper=queryNotes("uuid=?",new String[]{Id.toString()});
+        try{
+            if(cursorWrapper.getCount()==0){
+                return null;
+            }
+            cursorWrapper.moveToFirst();
+            return cursorWrapper.getNote();
+        }finally {
+            cursorWrapper.close();
+        }
     }
+
     private static ContentValues getContentValues(Note note){
         ContentValues values=new ContentValues();
         values.put("title",note.getTitle());
         values.put("content",note.getContent());
         values.put("uuid",note.getUUID().toString());
         return values;
+    }
+
+    private NoteCursorWrapper queryNotes(String whereClause,String[] whereArgs){
+        Cursor cursor=mDatabase.query(
+                "notebase",
+                null,
+                whereClause,
+                whereArgs,
+                null,
+                null,
+                null
+        );
+        return new NoteCursorWrapper(cursor);
+    }
+    public void updateNote(Note note){
+        String uuidstring=note.getUUID().toString();
+        ContentValues values=getContentValues(note);
+        mDatabase.update("notebase",values,"uuid=?",
+                new String[]{uuidstring});
     }
 
 }

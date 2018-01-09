@@ -67,5 +67,10 @@ public class NoteFragment extends Fragment {
         });
         return view;
     }
+    public void onPause(){
+        super.onPause();
+
+        NoteLab.get(getActivity()).updateNote(mNote);
+    }
 
 }
