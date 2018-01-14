@@ -1,17 +1,12 @@
 package com.bignerdranch.androidboy.notepad;
 
 
-
-import android.content.Intent;
-import android.support.design.widget.FloatingActionButton;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
 
-import java.nio.FloatBuffer;
-
+//负责托管notelist的activite
 public class NoteListActivity extends AppCompatActivity {
 
 
@@ -20,13 +15,13 @@ public class NoteListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FragmentManager fm=getSupportFragmentManager();
-        Fragment fragment=fm.findFragmentById(R.id.fragment_container);
+        FragmentManager fm = getSupportFragmentManager();
+        Fragment fragment = fm.findFragmentById(R.id.fragment_container);
 
-        if(fragment==null){
-            fragment=new NoteListFragment();
-            fm.beginTransaction().add(R.id.fragment_container,fragment)
-            .commit();
+        if (fragment == null) {
+            fragment = new NoteListFragment();
+            fm.beginTransaction().add(R.id.fragment_container, fragment)
+                    .commit();
         }
 
 

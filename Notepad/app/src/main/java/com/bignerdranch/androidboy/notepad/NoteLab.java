@@ -11,6 +11,8 @@ import java.util.UUID;
 
 /**
  * Created by androidboy on 18-1-6.
+ * note类的总处理，建立数据库，所有关于处理note数据的方法都在该类中
+ * 建立了一个该类的静态全局变量sNoteLab，所有类都使用这一对象的方法和数据库
  */
 
 public class NoteLab {
@@ -18,61 +20,69 @@ public class NoteLab {
 
     private SQLiteDatabase mDatabase;
 
+    //构造器
+    private NoteLab(Context context) {
+        mDatabase = new NoteBaseHelper(context).getWritableDatabase();
 
+    }
 
-    public static NoteLab get(Context context){
-        if(sNoteLab==null){
-            sNoteLab=new NoteLab(context);
+    public static NoteLab get(Context context) {
+        if (sNoteLab == null) {
+            sNoteLab = new NoteLab(context);
         }
         return sNoteLab;
     }
-    private NoteLab(Context context){
-        mDatabase=new NoteBaseHelper(context).getWritableDatabase();
 
+    //用于将note里的数据输入数据库
+    private static ContentValues getContentValues(Note note) {
+        ContentValues values = new ContentValues();
+        values.put("title", note.getTitle());
+        values.put("content", note.getContent());
+        values.put("uuid", note.getUUID().toString());
+        return values;
     }
-    public void addNote(Note c){
-        ContentValues values=getContentValues(c);
-        mDatabase.insert("notebase",null,values);
-    }
-    public List<Note>getNotes(){
-        List<Note>notes=new ArrayList<>();
-        NoteCursorWrapper cursor=queryNotes(null,null);
 
-        try{
+    //添加note到数据库中
+    public void addNote(Note c) {
+        ContentValues values = getContentValues(c);
+        mDatabase.insert("notebase", null, values);
+    }
+
+    //读取数据库的内容，转为note集合，以便于recycle使用
+    public List<Note> getNotes() {
+        List<Note> notes = new ArrayList<>();
+        NoteCursorWrapper cursor = queryNotes(null, null);
+
+        try {
             cursor.moveToFirst();
-            while (!cursor.isAfterLast()){
+            while (!cursor.isAfterLast()) {
                 notes.add(cursor.getNote());
                 cursor.moveToNext();
             }
-        }finally {
+        } finally {
             cursor.close();
         }
         return notes;
 
     }
-    public Note getNote(UUID Id){
-        NoteCursorWrapper cursorWrapper=queryNotes("uuid=?",new String[]{Id.toString()});
-        try{
-            if(cursorWrapper.getCount()==0){
+
+    //查询特定的符合id的note
+    public Note getNote(UUID Id) {
+        NoteCursorWrapper cursorWrapper = queryNotes("uuid=?", new String[]{Id.toString()});
+        try {
+            if (cursorWrapper.getCount() == 0) {
                 return null;
             }
             cursorWrapper.moveToFirst();
             return cursorWrapper.getNote();
-        }finally {
+        } finally {
             cursorWrapper.close();
         }
     }
 
-    private static ContentValues getContentValues(Note note){
-        ContentValues values=new ContentValues();
-        values.put("title",note.getTitle());
-        values.put("content",note.getContent());
-        values.put("uuid",note.getUUID().toString());
-        return values;
-    }
-
-    private NoteCursorWrapper queryNotes(String whereClause,String[] whereArgs){
-        Cursor cursor=mDatabase.query(
+    //查询符合条件的数据
+    private NoteCursorWrapper queryNotes(String whereClause, String[] whereArgs) {
+        Cursor cursor = mDatabase.query(
                 "notebase",
                 null,
                 whereClause,
@@ -83,10 +93,12 @@ public class NoteLab {
         );
         return new NoteCursorWrapper(cursor);
     }
-    public void updateNote(Note note){
-        String uuidstring=note.getUUID().toString();
-        ContentValues values=getContentValues(note);
-        mDatabase.update("notebase",values,"uuid=?",
+
+    //更新特定的符合id的note数据库
+    public void updateNote(Note note) {
+        String uuidstring = note.getUUID().toString();
+        ContentValues values = getContentValues(note);
+        mDatabase.update("notebase", values, "uuid=?",
                 new String[]{uuidstring});
     }
 

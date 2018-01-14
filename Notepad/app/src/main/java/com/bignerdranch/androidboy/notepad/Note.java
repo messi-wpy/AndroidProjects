@@ -5,13 +5,28 @@ import java.util.UUID;
 
 /**
  * Created by androidboy on 18-1-6.
+ * 创建一个note类
  */
 
 public class Note {
+    //content代表note输入的内容
     private String content;
+    //title代表note的标题
     private String title;
+    //创建note的日期
     private Date mDate;
+    //每个note的id，用于寻找该note
     private UUID mId;
+
+    public Note() {
+        this(UUID.randomUUID());
+
+    }
+
+    public Note(UUID id) {
+        mId = id;
+        mDate = new Date();
+    }
 
     public String getTitle() {
         return title;
@@ -19,15 +34,6 @@ public class Note {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public Note(){
-      this(UUID.randomUUID());
-
-    }
-    public Note (UUID id){
-        mId=id;
-        mDate=new Date();
     }
 
     public String getContent() {
