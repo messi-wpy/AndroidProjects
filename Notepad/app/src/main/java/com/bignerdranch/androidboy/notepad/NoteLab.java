@@ -102,4 +102,8 @@ public class NoteLab {
                 new String[]{uuidstring});
     }
 
+    public void deletenote(Note note){
+        mDatabase.delete("notebase","uuid=?",new String[]{note.getUUID().toString()});
+    }
+
 }

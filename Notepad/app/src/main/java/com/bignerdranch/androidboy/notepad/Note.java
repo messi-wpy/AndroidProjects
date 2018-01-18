@@ -18,8 +18,19 @@ public class Note {
     //每个note的id，用于寻找该note
     private UUID mId;
 
+    private Boolean mchecked=false;
+
+    public void setMchecked(Boolean mchecked) {
+        this.mchecked = mchecked;
+    }
+
+    public Boolean getMchecked() {
+        return mchecked;
+    }
+
     public Note() {
-        this(UUID.randomUUID());
+
+        mId=UUID.randomUUID();
 
     }
 

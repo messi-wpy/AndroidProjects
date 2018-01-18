@@ -38,5 +38,10 @@ public class NoteBaseHelper extends SQLiteOpenHelper {
 
     }
 
+    public void delete(String UUID){
+        SQLiteDatabase database = getWritableDatabase();
+        database.execSQL("delete from notebase where uuid=?",new String []{UUID});
+    }
+
 
 }
