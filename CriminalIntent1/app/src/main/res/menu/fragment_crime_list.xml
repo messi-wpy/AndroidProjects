@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/new_crime"
+        android:icon="@drawable/ic_menu_add"
+        android:title="@string/new_crime"
+        app:showAsAction="ifRoom|withText"/>
+
+    <item
+        android:id="@+id/show_subtitle"
+        android:title="@string/show_subtitle"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/delete_menu"
+        android:icon="@drawable/ic_menu_delete1"
+        android:title="delete"
+        app:showAsAction="ifRoom|withText"/>
+
+
+</menu>
