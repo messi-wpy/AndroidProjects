@@ -46,8 +46,10 @@ public class NoteListFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 for (int i = 0; i < deleteNote.size(); i++) {
-                    NoteLab noteLab = NoteLab.get(getActivity());
-                    noteLab.deletenote(deleteNote.get(i));
+                   // NoteLab noteLab = NoteLab.get(getActivity());
+                   // noteLab.deletenote(deleteNote.get(i));
+                    NoteBaseHelper noteBaseHelper=new NoteBaseHelper(getActivity());
+                    noteBaseHelper.delete(deleteNote.get(i).getUUID().toString());
                 }
 
                 updateUI();
@@ -119,7 +121,7 @@ public class NoteListFragment extends Fragment {
         public void bind(Note note) {
             mNote = note;
             textTitle.setText(mNote.getTitle());
-            textDate.setText(mNote.getDate().toString());
+            textDate.setText(mNote.getDate());
         }
 
         //重载，更新视图出现checkbox

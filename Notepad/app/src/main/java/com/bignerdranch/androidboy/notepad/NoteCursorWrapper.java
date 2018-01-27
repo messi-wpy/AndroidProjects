@@ -3,6 +3,9 @@ package com.bignerdranch.androidboy.notepad;
 import android.database.Cursor;
 import android.database.CursorWrapper;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.UUID;
 
 /**
@@ -19,8 +22,10 @@ public class NoteCursorWrapper extends CursorWrapper {
         String uuidString = getString(getColumnIndex("uuid"));
         String titile = getString(getColumnIndex("title"));
         String content = getString(getColumnIndex("content"));
+        String date=getString(getColumnIndex("date"));
 
         Note note = new Note(UUID.fromString(uuidString));
+        note.setDate(date);
         note.setTitle(titile);
         note.setContent(content);
         return note;

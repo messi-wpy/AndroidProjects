@@ -39,6 +39,7 @@ public class NoteLab {
         values.put("title", note.getTitle());
         values.put("content", note.getContent());
         values.put("uuid", note.getUUID().toString());
+        values.put("date",note.getDate());
         return values;
     }
 
@@ -46,6 +47,7 @@ public class NoteLab {
     public void addNote(Note c) {
         ContentValues values = getContentValues(c);
         mDatabase.insert("notebase", null, values);
+      //  mDatabase.execSQL("insert into notebase(date)values(?)",new String[]{c.getDate()});
     }
 
     //读取数据库的内容，转为note集合，以便于recycle使用

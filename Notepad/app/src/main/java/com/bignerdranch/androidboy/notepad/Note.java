@@ -1,5 +1,6 @@
 package com.bignerdranch.androidboy.notepad;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
 
@@ -14,7 +15,7 @@ public class Note {
     //title代表note的标题
     private String title;
     //创建note的日期
-    private Date mDate;
+    private String mDate;
     //每个note的id，用于寻找该note
     private UUID mId;
 
@@ -31,13 +32,17 @@ public class Note {
     public Note() {
 
         mId=UUID.randomUUID();
-
+        Date date=new Date();
+        SimpleDateFormat formmat=new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        mDate=formmat.format(date);
     }
 
     public Note(UUID id) {
         mId = id;
-        mDate = new Date();
+
     }
+
+
 
     public String getTitle() {
         return title;
@@ -55,11 +60,11 @@ public class Note {
         this.content = content;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return mDate;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         mDate = date;
     }
 

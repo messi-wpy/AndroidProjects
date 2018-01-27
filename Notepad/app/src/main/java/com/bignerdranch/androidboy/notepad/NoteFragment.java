@@ -76,7 +76,10 @@ public class NoteFragment extends Fragment {
     // 在pause生命周期更新数据库的数据
     public void onPause() {
         super.onPause();
-
+if (mNote.getTitle()==null&&mNote.getContent()==null){
+    NoteLab.get(getActivity()).deletenote(mNote);
+}
+else
         NoteLab.get(getActivity()).updateNote(mNote);
     }
 

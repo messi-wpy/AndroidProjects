@@ -19,7 +19,7 @@ public class NoteBaseHelper extends SQLiteOpenHelper {
 
     //实现其三个方法
     public NoteBaseHelper(Context context) {
-        super(context, DATABASE_NAME, null, VERSION);
+        super(context, DATABASE_NAME, null, 2);
     }
 
     //建立数据库
@@ -29,18 +29,21 @@ public class NoteBaseHelper extends SQLiteOpenHelper {
                 + "id integer primary key autoincrement,"
                 + "title ,"
                 + "content ,"
-                + "uuid )");
+                + "uuid,"
+                +"date)");
     }
 
-    //更新升级，现在没用上
+    //更新升级
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+             db.execSQL("drop table if exists notebase");
+             onCreate(db);
     }
 
     public void delete(String UUID){
         SQLiteDatabase database = getWritableDatabase();
         database.execSQL("delete from notebase where uuid=?",new String []{UUID});
+        //database.execSQL("insert into notebase(title)values(?)",new String []{"asda"});
     }
 
 
