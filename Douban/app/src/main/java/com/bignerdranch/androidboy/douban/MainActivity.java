@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private String input;
     private final static String TAG="douban";
     private myAdapter mAdapter;
-
+    private TextView mtitleTextview;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
     //创建recycleView的holder
     private class movieHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        private TextView mtitleTextview;
+
         private TextView mCastsTextView;
         private TextView mGradeTextView;
         private ImageView mImageView;
@@ -105,7 +105,8 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View v){
-            Intent intent=new Intent(Intent.ACTION_VIEW, Uri.parse(doubanUrl));
+            //Intent intent=new Intent(Intent.ACTION_VIEW, Uri.parse(doubanUrl));
+            Intent intent=webViewActivity.newIntent(MainActivity.this,doubanUrl);
             startActivity(intent);
         }
 
@@ -188,7 +189,6 @@ public class MainActivity extends AppCompatActivity {
                     mMovies=response.body().getSubjects();
                     mAdapter=new myAdapter(mMovies);
                     mRecyclerView.setAdapter(mAdapter);
-                    int a=mMovies.size();
                 }catch (NullPointerException e){
                     Toast.makeText(MainActivity.this,"没有搜寻到",Toast.LENGTH_SHORT).show();
                 }
