@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ImageCut</string>
+    <string name="cut">裁剪</string>
+    <string name="photo_album">相册</string>
+</resources>
