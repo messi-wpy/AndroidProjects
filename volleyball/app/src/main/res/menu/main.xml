@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/item_match"
+        android:icon="@mipmap/ic_discovery_gray"
+        android:title="比赛" />
+    <item
+        android:id="@+id/item_count"
+        android:icon="@mipmap/ic_discovery_gray"
+        android:title="统计" />
+    <item
+        android:id="@+id/item_strategy"
+        android:icon="@mipmap/ic_discovery_gray"
+        android:title="战术" />
+    <item
+        android:id="@+id/item_personal"
+        android:icon="@mipmap/ic_discovery_gray"
+        android:title="个人" />
+</menu>

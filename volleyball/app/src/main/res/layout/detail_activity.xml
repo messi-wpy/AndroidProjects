@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TEAM   LIST"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:layout_centerHorizontal="true"
+
+        android:textColor="#000000"
+
+        android:id="@+id/detail_tv"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="比赛的对阵双方为:"
+        android:textStyle="bold"
+        android:layout_below="@+id/detail_tv"
+        android:textSize="25sp"
+
+        android:id="@+id/description_1"/>
+
+
+
+    <LinearLayout
+        android:id="@+id/linear_layout"
+        android:layout_below="@+id/description_1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:layout_weight="2"
+            android:id="@+id/detail_country_name_left"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:hint="国家队"
+            android:textSize="25sp"
+            android:paddingTop="10dp"
+            />
+
+
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="VS"
+            android:textSize="30dp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:layout_weight="2"
+            android:id="@+id/detail_country_name_right"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:hint="国家队"
+            android:textSize="25sp"
+            android:paddingTop="10dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:text="比分"
+        android:textSize="25sp"
+        android:id="@+id/description_5"
+        android:layout_below="@+id/linear_layout"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="比赛类别:"
+        android:textStyle="bold"
+        android:layout_below="@+id/description_5"
+        android:textSize="25sp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/description_2"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linear_layout_2"
+        android:orientation="vertical"
+        android:layout_toRightOf="@+id/description_5"
+        android:layout_below="@+id/linear_layout">
+
+        <EditText
+            android:id="@+id/score_up"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:hint="输入每节比分以空格隔开,如20 21 21 21 ..."/>
+
+        <EditText
+            android:id="@+id/score_down"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:hint="输入每节比分以空格隔开,如20 21 21 21 ..."/>
+
+    </LinearLayout>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_below="@id/description_2"
+        android:hint="请输入"
+        android:id="@+id/match_type_ed"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="比赛日期:"
+        android:textStyle="bold"
+        android:layout_below="@+id/match_type_ed"
+        android:textSize="25sp"
+
+        android:id="@+id/description_3"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:layout_below="@id/description_3"
+        android:hint="请输入"
+        android:id="@+id/match_date_ed"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/match_date_ed"
+        android:text="球员信息　　　所属位置"
+        android:id="@+id/description_4"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/detail_recycle_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/description_4">
+
+
+    </android.support.v7.widget.RecyclerView>
+    <Button
+        android:id="@+id/detail_add_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="添加球员"
+        android:textSize="30sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"/>
+
+    <Button
+        android:id="@+id/detail_save_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="保存信息"
+        android:textSize="30sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"/>
+</RelativeLayout>

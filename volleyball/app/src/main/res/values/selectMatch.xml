@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string-array name="match">
+        <item>扣杀成功率</item>
+        <item>扣杀斜线和直线比例</item>
+        <item>一传到位率</item>
+        <item>二传到位率</item>
+    </string-array>
+</resources>

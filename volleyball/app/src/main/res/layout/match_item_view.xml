@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp">
+
+
+    <TextView
+        android:id="@+id/item_matchName"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text="赛事名称"
+        android:textSize="18sp"
+        android:paddingTop="10dp"
+        android:layout_centerHorizontal="true"/>
+    <LinearLayout
+        android:layout_below="@+id/item_matchName"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_weight="2"
+            android:id="@+id/country_name_left"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="国家队"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:textColor="#000000"
+            android:paddingTop="10dp"
+            />
+
+
+        <TextView
+            android:layout_weight="1"
+            android:id="@+id/country_score_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="0"
+            android:textSize="25sp"
+            android:textColor="#0000E3"/>
+
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="VS"
+            android:textSize="30dp"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_weight="1"
+            android:id="@+id/country_score_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="0"
+            android:textSize="25sp"
+            android:textColor="#0000E3"/>
+        <TextView
+            android:layout_weight="2"
+            android:id="@+id/country_name_right"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="国家队"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:textColor="#000000"
+            android:paddingTop="10dp" />
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/statistics_name"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:text="name"/>
+    <TextView
+        android:layout_below="@+id/statistics_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="扣杀率统计"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:id="@+id/text_statistics_1"/>
+    <LinearLayout
+        android:id="@+id/line_statistics_1"
+        android:layout_below="@+id/text_statistics_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <Button
+
+            android:id="@+id/statistics_plus_1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="＋"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="20sp"/>
+
+        <Button
+
+            android:id="@+id/statistics_minus_1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="－"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="20sp"/>
+        <Button
+
+            android:id="@+id/statistics_reset_1"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="re"
+            android:textStyle=""
+            android:gravity="center"
+            android:textSize="20sp"/>
+
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/statistics_score_1"
+            android:textSize="15sp"
+            android:text="0"
+            android:layout_marginLeft="10dp"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/line_statistics_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="扣杀斜线与直线"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:id="@+id/text_statistics_2"/>
+    <LinearLayout
+        android:id="@+id/line_statistics_2"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/text_statistics_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <Button
+
+            android:id="@+id/statistics_plus_2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="＋"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="20sp"/>
+
+        <Button
+
+            android:id="@+id/statistics_minus_2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="－"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="20sp"/>
+        <Button
+
+            android:id="@+id/statistics_reset_2"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="re"
+            android:textStyle=""
+            android:gravity="center"
+            android:textSize="20sp"/>
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/statistics_score_2"
+            android:textSize="15sp"
+            android:text="0"
+            android:layout_marginLeft="10dp"
+            />
+
+    </LinearLayout>
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/line_statistics_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="一传到位率"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:id="@+id/text_statistics_3"/>
+    <LinearLayout
+        android:id="@+id/line_statistics_3"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/text_statistics_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <Button
+
+            android:id="@+id/statistics_plus_3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="＋"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="20sp"/>
+
+        <Button
+
+            android:id="@+id/statistics_minus_3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="－"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="20sp"/>
+        <Button
+
+            android:id="@+id/statistics_reset_3"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="re"
+            android:textStyle=""
+            android:gravity="center"
+            android:textSize="20sp"/>
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/statistics_score_3"
+            android:textSize="15sp"
+            android:text="0"
+            android:layout_marginLeft="10dp"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/line_statistics_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="二传到位率"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:id="@+id/text_statistics_4"/>
+    <LinearLayout
+        android:id="@+id/line_statistics_4"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/text_statistics_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <Button
+
+            android:id="@+id/statistics_plus_4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="＋"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="20sp"/>
+
+        <Button
+
+            android:id="@+id/statistics_minus_4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="－"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="20sp"/>
+        <Button
+
+            android:id="@+id/statistics_reset_4"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="re"
+            android:textStyle=""
+            android:gravity="center"
+            android:textSize="20sp"/>
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/statistics_score_4"
+            android:textSize="15sp"
+            android:text="0"
+            android:layout_marginLeft="10dp"
+            />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

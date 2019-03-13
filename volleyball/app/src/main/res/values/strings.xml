@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">volleyball</string>
+    <string name="login_name">排球分析系统</string>
+    <string name="coach">主教练:</string>
+</resources>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/play_name_ed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/textsize_1"
+        android:hint="队员姓名"/>
+
+    <EditText
+        android:id="@+id/play_country_ed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/textsize_1"
+        android:hint="球队名称"
+        android:layout_below="@+id/play_name_ed"/>
+
+    <EditText
+        android:layout_below="@+id/play_country_ed"
+        android:id="@+id/play_position_ed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/textsize_1"
+        android:hint="队员所打位置"/>
+
+    <EditText
+        android:id="@+id/play_score_ed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/textsize_1"
+        android:hint="每节得分,用空格隔开 如10 5 6 4..."
+        android:layout_below="@id/play_position_ed"/>
+
+    <EditText
+        android:id="@+id/play_successRate_ed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/textsize_1"
+        android:hint="每节扣杀成功率,空格隔开:如70% 69% 80%..."
+        android:layout_below="@+id/play_score_ed"/>
+    <Button
+        android:id="@+id/player_save_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="完成填写"
+        android:textSize="30sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"/>
+
+</RelativeLayout>
